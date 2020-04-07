@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat app</title>
     <link rel="icon" href="/img/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <div class="chat">
@@ -17,10 +17,11 @@
 
             <div class="compose">
                 <form id="sendMessage">
-                    <input name="message" placeholder="Type your message" autocomplete="off" >
+                    <input name="message" placeholder="Type your message" autocomplete="off" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Type your message'" > <br>
                     <button>Send</button>
+                    <button id="send-location">Share location</button>
                 </form>
-                <button id="send-location">Share location</button>
+                
             </div>
         </div>
     </div>
