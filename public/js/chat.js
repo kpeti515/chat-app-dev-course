@@ -29,8 +29,10 @@ const autoscroll = () => {
 
   if (Math.round(containerHeight - newMessageHeight - 1) <= Math.round(scrollOffset)) {
     $messages.scrollTop = $messages.scrollHeight
+  }
 }
-}
+const vh = window.innerHeight * 0.01
+document.documentElement.style.setProperty('--vh', `${vh}px`)
 
 socket.on('locationMessage', (urlmessage) => {
   const link = Mustache.render(positionShareTemplate, {
