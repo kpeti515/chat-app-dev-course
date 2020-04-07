@@ -70,7 +70,9 @@ $messageForm.addEventListener('submit', (e) => {
     $messageFormButton.removeAttribute('disabled')
     $messageFormInput.value = ''
     $messageFormInput.focus()
-    if (error) {
+    if (error === 'Just an enter hit') {
+      return
+    } else if (error) {
       return console.log(error)
     }
     console.log('the message was delivered')

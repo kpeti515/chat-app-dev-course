@@ -1,8 +1,4 @@
 const generateMessage = (username, text) => {
-  if (!text) {
-    return
-  }
-
   return {
     username,
     text,

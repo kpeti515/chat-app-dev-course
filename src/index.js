@@ -38,7 +38,9 @@ io.on('connection', (socket) => {
   socket.on('sendMessage', (message, callback) => {
     const user = getUser(socket.id)
     const filter = new Filter()
-
+    if (message === '') {
+      return callback('Just an enter hit')
+    }
     if (filter.isProfane(message)) {
       return callback('Profanity is not allowed!')
     }
